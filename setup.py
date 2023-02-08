@@ -32,7 +32,7 @@ setup(
             sources=["sqlean/src/sqlite3-fuzzy.c"] + glob("sqlean/src/fuzzy/*.c"),
         ),
         Extension("sqlean.ipaddr", sources=["sqlean/src/sqlite3-ipaddr.c"]),
-        # Extension("json1", sources=["sqlean/src/sqlite3-json1.c"]),
+        Extension("sqlean.json1", sources=["sqlean/src/sqlite3-json1.c"]),
         Extension("sqlean.math", sources=["sqlean/src/sqlite3-math.c"], libaries=["m"]),
         Extension(
             "sqlean.regexp",

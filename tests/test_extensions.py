@@ -11,7 +11,7 @@ all_extensions = [
     "fileio",
     "fuzzy",
     "ipaddr",
-    # "json1",
+    "json1",
     "math",
     "regexp",
     "stats",

@@ -22,8 +22,8 @@ select '21', json_type('{"answer":42}') = 'object';
 select '22', json_valid('{"answer":42}') = 1;
 select '23', json_quote('answer') = '"answer"';
 
-select '31', json_group_array(value) = '[1,2,3,4]' from generate_series(1,4);
-select '32', json_group_object('v', value) = '{"v":1,"v":2,"v":3,"v":4}' from generate_series(1,4);
+select '31', json_group_array(column1) = '[1,2,3,4]' from (values (1),(2),(3),(4));
+select '32', json_group_object('v', column1) = '{"v":1,"v":2,"v":3,"v":4}' from (values (1),(2),(3),(4));
 
 select '41', sum(value) = 10 from json_each('[1,2,3,4]');
 select '42', sum(value) = 10 from json_each('{"a":[1,2,3,4]}', '$.a');
