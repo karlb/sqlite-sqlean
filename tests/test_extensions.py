@@ -13,7 +13,7 @@ all_extensions = [
     "ipaddr",
     # "json1",
     "math",
-    # "regexp",
+    "regexp",
     "stats",
     "text",
     "unicode",
