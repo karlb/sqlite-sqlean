@@ -15,13 +15,13 @@ Install the `sqlite-sqlean` package from pypi.
 Install via pip
 
 ```sh
-pip install git+git://github.com/karlb/sqlite-sqlean
+pip install git+https://github.com/karlb/sqlite-sqlean
 ```
 
 or add this to you requirements.txt:
 
 ```
-git+git://github.com/karlb/sqlite-sqlean
+git+https://github.com/karlb/sqlite-sqlean
 ```
 
 
