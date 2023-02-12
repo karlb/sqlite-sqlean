@@ -4,7 +4,7 @@ import sqlite3
 
 
 def loadable_path(extension: str) -> str:
-    spec = importlib.util.find_spec('sqlean.' + extension)
+    spec = importlib.util.find_spec('sqlite_sqlean.' + extension)
     if spec is None or spec.origin is None:
         raise Exception(f"Unknown extension {extension!r}")
     p = Path(spec.origin)
