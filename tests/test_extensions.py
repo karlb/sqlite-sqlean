@@ -28,10 +28,11 @@ def test_extension(extension, monkeypatch):
     conn.enable_load_extension(True)
     sqlite_sqlean.load(conn, extension)
 
-    with open(f"sqlean/test/{extension}.sql") as f:
+    sqlean_path = Path(__file__).parent.parent / "sqlean"
+    with open(sqlean_path / "test" / f"{extension}.sql") as f:
         test_sql_script = f.read()
 
-    monkeypatch.chdir('sqlean')
+    monkeypatch.chdir(sqlean_path)
     next_statement = ""
     for line in test_sql_script.splitlines():
         if line.startswith(".load") or 'load_extension' in line or line.startswith("--"):
