@@ -1,4 +1,11 @@
-import sqlite3
+from pathlib import Path
+try:
+    # Some python builds don't have enable_load_extension enabled. In those
+    # cases we need the pysqlite3-binary package to provide a sqlite3 with it
+    # enabled to be able to run our tests.
+    import pysqlite3 as sqlite3
+except ImportError:
+    import sqlite3
 from subprocess import check_call
 
 import pytest
