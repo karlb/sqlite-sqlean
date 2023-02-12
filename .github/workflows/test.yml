@@ -28,7 +28,9 @@ jobs:
         cache-dependency-path: setup.py
     - name: Install dependencies
       run: |
-        pip install '.[test]'
+        python custom_build.py
+        pip install dist/*
+        pip install pytest
     - name: Run tests
       run: |
         pytest
