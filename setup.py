@@ -13,7 +13,7 @@ setup(
     name="sqlite-sqlean",
     version="0.1",
     description="Loadable sqlite extensions from sqlean",
-    py_modules=["sqlite_sqlean"],
+    packages=["sqlite_sqlean"],
     ext_modules=[
         Extension(
             "sqlite_sqlean.crypto",
