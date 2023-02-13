@@ -5,3 +5,5 @@ build
 .mypy_cache
 __pycache__
 sqlite_sqlean/*.so
+sqlite_sqlean/*.dll
+sqlite_sqlean/*.dylib
