@@ -18,6 +18,7 @@ setup(
         Extension(
             "sqlite_sqlean.crypto",
             sources=["sqlean/src/sqlite3-crypto.c"] + glob("sqlean/src/crypto/*.c"),
+            extra_compile_args=["-O1"],
         ),
         Extension(
             "sqlite_sqlean.define",
@@ -30,10 +31,13 @@ setup(
         Extension(
             "sqlite_sqlean.fuzzy",
             sources=["sqlean/src/sqlite3-fuzzy.c"] + glob("sqlean/src/fuzzy/*.c"),
+            extra_compile_args=["-O1"],
         ),
         Extension("sqlite_sqlean.ipaddr", sources=["sqlean/src/sqlite3-ipaddr.c"]),
         Extension("sqlite_sqlean.json1", sources=["sqlean/src/sqlite3-json1.c"]),
-        Extension("sqlite_sqlean.math", sources=["sqlean/src/sqlite3-math.c"], libraries=["m"]),
+        Extension(
+            "sqlite_sqlean.math", sources=["sqlean/src/sqlite3-math.c"], libraries=["m"]
+        ),
         Extension(
             "sqlite_sqlean.regexp",
             sources=[
@@ -49,12 +53,16 @@ setup(
             ],
         ),
         Extension(
-            "sqlite_sqlean.stats", sources=["sqlean/src/sqlite3-stats.c"], libraries=["m"]
+            "sqlite_sqlean.stats",
+            sources=["sqlean/src/sqlite3-stats.c"],
+            libraries=["m"],
         ),
         Extension("sqlite_sqlean.text", sources=["sqlean/src/sqlite3-text.c"]),
         Extension("sqlite_sqlean.unicode", sources=["sqlean/src/sqlite3-unicode.c"]),
         Extension("sqlite_sqlean.uuid", sources=["sqlean/src/sqlite3-uuid.c"]),
-        Extension("sqlite_sqlean.vsv", sources=["sqlean/src/sqlite3-vsv.c"], libraries=["m"]),
+        Extension(
+            "sqlite_sqlean.vsv", sources=["sqlean/src/sqlite3-vsv.c"], libraries=["m"]
+        ),
     ],
     url="http://github.com/karlb/sqlite-sqlean",
     long_description=long_description,
